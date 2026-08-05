@@ -1,0 +1,9 @@
+{
+  "short_name": "Serenity",
+  "name": "Serenity Spa & Beauty",
+  "icons": [{ "src": "/icon.png", "type": "image/png", "sizes": "192x192" }],
+  "start_url": "/",
+  "background_color": "#f8f2f5",
+  "theme_color": "#8b5269",
+  "display": "standalone"
+}
