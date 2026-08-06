@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  // Rutas relativas para que los recursos funcionen en GitHub Pages.
+  base: "./",
   server: {
     watch: {
       // OneDrive dentro de WSL puede no emitir eventos de cambios fiables.

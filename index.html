@@ -2,54 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <meta
       name="description"
       content="Ejemplo de sitio para un spa creado con HTML5 Boilerplate, Vite y Sass."
     />
+
     <meta name="theme-color" content="#f8f2f5" />
+
     <title>Spa & Beauty</title>
+
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&family=Poppins:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
     <header class="header">
       <div class="header__left">
-        <img src="/images/logotipo.svg" alt="Beauty logotipo" class="logo" />
+        <a href="#" class="header__logo-link">
+          <img
+            src="/images/logotipo.svg"
+            alt="GlowQueen"
+            class="header__logo"
+          />
+        </a>
 
-        <nav class="nav">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Facilities</a></li>
-            <li><a href="#">More</a></li>
+        <nav class="navigation" aria-label="Main navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="#" class="navigation__link">Home</a>
+            </li>
+
+            <li class="navigation__item">
+              <a href="#" class="navigation__link">About</a>
+            </li>
+
+            <li class="navigation__item">
+              <a href="#" class="navigation__link">Services</a>
+            </li>
+
+            <li class="navigation__item">
+              <a href="#" class="navigation__link">Facilities</a>
+            </li>
+
+            <li class="navigation__item">
+              <a href="#" class="navigation__link navigation__link--more">
+                <span>More</span>
+                <span class="navigation__chevron" aria-hidden="true"></span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
 
       <div class="header__right">
-        <button class="icon-button">
-          <img src="/images/search.png" alt="" />
+        <button class="header__icon-button" type="button" aria-label="Search">
+          <img src="/images/search.svg" alt="" />
         </button>
-        <button class="icon-button">
-          <img src="/images/candado.png" alt="" />
+
+        <button
+          class="header__icon-button"
+          type="button"
+          aria-label="Shopping bag"
+        >
+          <img src="/images/shopping-bag.svg" alt="" />
         </button>
-        <a href="#" class="sign-in">Sign In</a>
-        <a href="#" class="sign-up">Sign Up</a>
+
+        <a href="#" class="header__sign-in">Sign In</a>
+
+        <a href="#" class="header__sign-up">Sign Up</a>
       </div>
     </header>
 
     <main>
       <section class="hero">
+        <!-- Columna izquierda -->
         <div class="hero__content">
           <h1 class="hero__title">
             Bring back the beauty and glow of your skin
@@ -72,6 +111,98 @@
 
               <span>Watch Video</span>
             </a>
+          </div>
+
+          <div class="features" aria-label="GlowQueen highlights">
+            <article class="feature">
+              <span class="feature__icon">
+                <img
+                  src="/images/special-treatment.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+
+              <div class="feature__text">
+                <strong class="feature__number">15+</strong>
+                <p class="feature__label">Special<br />Treatment</p>
+              </div>
+            </article>
+
+            <article class="feature">
+              <span class="feature__icon">
+                <img
+                  src="/images/professional-therapist.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+
+              <div class="feature__text">
+                <strong class="feature__number">25+</strong>
+                <p class="feature__label">Professional<br />Therapist</p>
+              </div>
+            </article>
+
+            <article class="feature">
+              <span class="feature__icon feature__icon--complete">
+                <img src="/images/herbal-cream.svg" alt="" aria-hidden="true" />
+              </span>
+
+              <div class="feature__text">
+                <strong class="feature__number">100%</strong>
+                <p class="feature__label">Herbal<br />Cream Formula</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="hero__visual">
+          <img
+            src="/images/Vector.png"
+            alt=""
+            class="hero__background-vector"
+          />
+
+          <img
+            src="/images/beauty-woman.png"
+            alt="Woman receiving a skin beauty treatment"
+            class="hero__model"
+          />
+
+          <div class="hero__testimonials">
+            <article class="testimonial testimonial--first">
+              <img
+                src="/images/quote-mark.svg"
+                alt=""
+                class="testimonial__quote"
+              />
+
+              <p class="testimonial__text">
+                I have a regular schedule to take treatment from GlowQueen, they
+                gave me the best service and treatment ever to maintain the
+                beauty and health of my skin
+              </p>
+
+              <strong class="testimonial__author"> Sophia Princeton </strong>
+            </article>
+
+            <article class="testimonial testimonial--second">
+              <img
+                src="/images/quote-mark.svg"
+                alt=""
+                class="testimonial__quote"
+              />
+
+              <p class="testimonial__text">
+                For the past few years, I've had a hard time finding the right
+                place for skin care to deal with my complicated skin condition,
+                thank God I found GlowQueen to treat my skin
+              </p>
+
+              <strong class="testimonial__author"> Tamara Jules </strong>
+            </article>
           </div>
         </div>
       </section>

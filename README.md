@@ -1,7 +1,25 @@
-# Serenity Spa & Beauty
+# Spa & Beauty
 
 Proyecto basado en HTML5 Boilerplate con Vite como herramienta de desarrollo y
 Sass para organizar y compilar los estilos.
+
+## Enlaces
+
+- Repositorio: https://github.com/Ciscojes/spa-beauty
+- Demo: https://ciscojes.github.io/spa-beauty/
+
+## Tecnologías
+
+- HTML5 semántico
+- CSS Grid y Flexbox
+- Sass
+- Vite
+
+## Diseño
+
+Header y hero estáticos para una página web de un negocio de SPA. El diseño se
+ha reproducido a partir del archivo de Figma proporcionado en el curso, tomando
+como referencia su frame de 1920 × 1080 px.
 
 ## Desarrollo
 

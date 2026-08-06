@@ -1,69 +1,89 @@
-// Punto de entrada: Vite compila este archivo como dist/css/style.css.
-//@use "settings";
-//@use "abstracts/abstracts";
-//@use "vendors/vendors";
+// @use "settings";
+// @use "abstracts/abstracts";
+// @use "vendors/vendors";
 @use "base/base";
-//@use "components/components";
-//@use "layout/layout";
-//@use "pages/pages";
-//@use "themes/themes";
+// @use "components/components";
+// @use "layout/layout";
+// @use "pages/pages";
+// @use "themes/themes";
 
-body {
-  background-color: #faf8f5;
+html {
+  width: 100%;
 }
 
-.header {
-  min-height: 120px;
-  padding-inline: 136px;
+body {
+  width: 100%;
+  margin: 0;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #a9d6cb;
+  outline-offset: 4px;
+}
+
+/*
+   HEADER
+*/
+
+.header {
+  width: 100%;
+  max-width: 1920px;
+  height: 120px;
+  margin: 0 auto;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 10;
+
+  transform: translateX(-50%);
 
   &__left {
-    display: flex;
-    align-items: center;
-    gap: 164px;
+    display: contents;
   }
 
   &__right {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+    position: absolute;
+    top: 30px;
+    left: 1345px;
+
+    width: 415px;
+    height: 60px;
 
     font-family: "Nunito Sans", sans-serif;
     font-size: 18px;
     font-weight: 400;
   }
 
-  .logo {
-    width: 212px;
-    height: 64px;
+  &__logo-link {
+    position: absolute;
+    top: 33px;
+    left: 160px;
+
     display: block;
-  }
 
-  .nav {
-    ul {
-      display: flex;
-      align-items: center;
-      gap: 56px;
+    transition: opacity 200ms ease;
 
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    a {
-      font-family: "Poppins", sans-serif;
-      font-size: 18px;
-      font-weight: 400;
-
-      color: #264065;
-      text-decoration: none;
+    &:hover {
+      opacity: 0.75;
     }
   }
 
-  .icon-button {
+  &__logo {
+    display: block;
+    width: 212px;
+    height: 54px;
+  }
+
+  &__icon-button {
+    position: absolute;
+    top: 14px;
+    left: 0;
+
     width: 32px;
     height: 32px;
     padding: 0;
@@ -73,29 +93,68 @@ body {
     justify-content: center;
 
     border: 0;
+    border-radius: 50%;
     background-color: transparent;
+
     cursor: pointer;
+    transition:
+      background-color 200ms ease,
+      transform 200ms ease;
+
+    &:hover {
+      background-color: rgba(169, 214, 203, 0.35);
+      transform: translateY(-2px);
+    }
 
     img {
+      display: block;
       width: 32px;
       height: 32px;
-      display: block;
+
       object-fit: contain;
+    }
+
+    &:nth-child(2) {
+      left: 64px;
     }
   }
 
-  .sign-in {
+  &__sign-in {
+    position: absolute;
+    top: 2px;
+    left: 162px;
+
+    width: 72px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 40px;
+
     color: #264065;
     text-decoration: underline;
+    transition: color 200ms ease;
+
+    &:hover {
+      color: #5a9f90;
+    }
   }
 
-  .sign-up {
+  &__sign-up {
+    position: absolute;
+    top: 0;
+    left: 266px;
+
     width: 149px;
     height: 60px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
 
     border-radius: 32px;
     background-color: #264065;
@@ -106,20 +165,139 @@ body {
 
     color: #ffffff;
     text-decoration: none;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      transform 200ms ease;
+
+    &:hover {
+      background-color: #a9d6cb;
+      color: #264065;
+      transform: translateY(-2px);
+    }
   }
 }
 
+/*
+   NAVEGACIÓN
+ */
+
+.navigation {
+  position: absolute;
+  top: 46px;
+  left: 536px;
+
+  width: 558px;
+  height: 27px;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 56px;
+
+    list-style: none;
+  }
+
+  &__item {
+    flex-shrink: 0;
+  }
+
+  &__link {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #264065;
+    text-decoration: none;
+    transition: color 200ms ease;
+
+    &:hover {
+      color: #5a9f90;
+    }
+  }
+
+  &__link--more {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__chevron {
+    width: 24px;
+    height: 24px;
+
+    position: relative;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 27%;
+      left: 31%;
+
+      width: 30%;
+      height: 30%;
+
+      border-right: 2px solid #264065;
+      border-bottom: 2px solid #264065;
+
+      transform: rotate(45deg);
+    }
+  }
+}
+
+/*
+   HERO
+*/
+
+/*
+ COLUMNA IZQUIERDA
+*/
+
 .hero {
-  min-height: 708px;
-  padding-top: 80px;
-  padding-left: 160px;
+  width: 100%;
+  max-width: 1920px;
+  height: 1080px;
+  // 0 elimina el margen vertical y auto centra el hero horizontalmente.
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1273px 635px;
+  grid-template-rows: 1080px;
+
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 8.5px;
+    left: -12px;
+    z-index: 0;
+
+    width: 1285px;
+    height: 820px;
+
+    background-color: #faf8f5;
+  }
 
   &__content {
-    width: 809px;
+    min-width: 0;
+
+    padding-top: 200px;
+    padding-left: 160px;
+    padding-right: 0;
+
+    position: relative;
+    z-index: 4;
   }
 
   &__title {
-    width: 809px;
+    width: 100%;
+    max-width: 809px;
     margin: 0;
 
     font-family: "Poppins", sans-serif;
@@ -132,7 +310,8 @@ body {
   }
 
   &__description {
-    width: 760px;
+    width: 100%;
+    max-width: 760px;
     margin: 32px 0 0;
 
     font-family: "Poppins", sans-serif;
@@ -145,11 +324,11 @@ body {
   }
 
   &__actions {
+    margin-top: 56px;
+
     display: flex;
     align-items: center;
     gap: 32px;
-
-    margin-top: 56px;
   }
 
   &__button {
@@ -159,11 +338,17 @@ body {
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 400;
 
     text-decoration: none;
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      transform 200ms ease;
   }
 
   &__button--primary {
@@ -171,7 +356,14 @@ body {
 
     border-radius: 32px;
     background-color: #264065;
+
     color: #ffffff;
+
+    &:hover {
+      background-color: #a9d6cb;
+      color: #264065;
+      transform: translateY(-2px);
+    }
   }
 
   &__button--video {
@@ -182,13 +374,20 @@ body {
     gap: 16px;
 
     color: #264065;
+
+    &:hover {
+      background-color: rgba(169, 214, 203, 0.3);
+      transform: translateY(-2px);
+    }
   }
 
   &__play {
     position: relative;
-    flex-grow: 0; // No aumenta de tamaño
-    flex-shrink: 0; // No se encoge
-    flex-basis: 48px; // Su ancho base es 48px
+
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 48px;
+
     width: 48px;
     height: 48px;
 
@@ -196,8 +395,219 @@ body {
       position: absolute;
       top: -26px;
       left: -50px;
+
       width: 148px;
       max-width: none;
     }
+  }
+
+  /*
+     COLUMNA DERECHA
+  */
+
+  &__visual {
+    width: 100%;
+    height: 820px;
+
+    position: relative;
+    z-index: 1;
+
+    background-color: #a9d6cb;
+
+    overflow: visible;
+  }
+
+  &__background-vector {
+    position: absolute;
+    top: 108.535px;
+    left: -72.75px;
+    z-index: 1;
+
+    width: 472.5px;
+    height: 436.59px;
+
+    opacity: 0.2;
+  }
+
+  &__model {
+    position: absolute;
+    top: -59px;
+    left: -912px;
+    z-index: 2;
+
+    width: 1559px;
+    height: 1070px;
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__testimonials {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+  }
+}
+
+/*
+   ESTADÍSTICAS
+ */
+
+.features {
+  position: absolute;
+  top: 678px;
+  left: 160px;
+  z-index: 5;
+
+  width: 643px;
+  height: 284px;
+  padding: 32px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 72px;
+
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(8px);
+}
+
+.feature {
+  width: 145px;
+  height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  filter: drop-shadow(0 24px 25px rgba(0, 0, 0, 0.05));
+
+  &__icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: transparent;
+
+    img {
+      width: 72px;
+      height: 72px;
+
+      object-fit: contain;
+    }
+  }
+
+  &__icon--complete {
+    background-color: transparent;
+
+    img {
+      width: 72px;
+      height: 72px;
+    }
+  }
+
+  &__text {
+    width: 145px;
+    height: 124px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+
+  &__number {
+    height: 54px;
+
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 54px;
+
+    color: #264065;
+  }
+
+  &__label {
+    width: 145px;
+    height: 54px;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+
+    color: #909090;
+  }
+}
+
+/*
+   TESTIMONIOS
+ */
+
+.testimonial {
+  position: absolute;
+
+  width: 405px;
+  height: 247px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  backdrop-filter: blur(8px);
+
+  font-family: "Poppins", sans-serif;
+  color: #264065;
+
+  &--first {
+    top: 435px;
+    left: 176px;
+  }
+
+  &--second {
+    top: 747px;
+    left: 36px;
+  }
+
+  &__quote {
+    display: block;
+    width: 32px;
+    height: 21px;
+  }
+
+  &__text {
+    width: 357px;
+    height: 135px;
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+
+    color: #070d15;
+  }
+
+  &__author {
+    display: block;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
   }
 }
