@@ -7,10 +7,6 @@
 // @use "pages/pages";
 // @use "themes/themes";
 
-html {
-  width: 100%;
-}
-
 body {
   width: 100%;
   margin: 0;
@@ -34,6 +30,10 @@ button:focus-visible {
   max-width: 1920px;
   height: 120px;
   margin: 0 auto;
+
+  /*
+   utilice position absolute para sobreponer delante del contenedor que contiene el color cyan 
+*/
 
   position: absolute;
   top: 0;
